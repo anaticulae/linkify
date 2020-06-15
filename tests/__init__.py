@@ -7,8 +7,11 @@
 # be prosecuted under federal law. Its content is company confidential.
 #==============================================================================
 
+import contextlib
 import functools
+import http
 
+import urllib3
 import utila
 
 import linkify.cli
@@ -26,3 +29,14 @@ fail = functools.partial(
     process=linkify.PROCESS,
     success=False,
 )
+
+
+@contextlib.contextmanager
+def patch_urllib(monkeypatch):
+    with monkeypatch.context() as context:
+        context.setattr(
+            urllib3.request.RequestMethods,
+            'request',
+            lambda _, __, ___: urllib3.HTTPResponse(status=http.HTTPStatus.OK),
+        )
+        yield

@@ -7,13 +7,10 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import http
-
 import pytest
-import urllib3
-import urllib3.request
 
 import linkify.link
+import tests
 
 
 @pytest.mark.parametrize('url, green, expected', [
@@ -26,11 +23,6 @@ def test_verify_link(url, green, expected):
 
 
 def test_verify_mocked(monkeypatch):
-    with monkeypatch.context() as context:
-        context.setattr(
-            urllib3.request.RequestMethods,
-            'request',
-            lambda _, __, ___: urllib3.HTTPResponse(status=http.HTTPStatus.OK),
-        )
+    with tests.patch_urllib(monkeypatch):
         result = linkify.link.verify(url='http://www.amazon.com')
     assert result
