@@ -6,19 +6,19 @@
 # use or distribution is an offensive act against international law and may
 # be prosecuted under federal law. Its content is company confidential.
 #==============================================================================
+
 import utila
 import utila.cli
 
-from www import __version__
+import linkify
 
 COMMANDS = []  # add additional commands here
-
 
 @utila.saveme
 def main():
     parser = utila.cli.create_parser(
         COMMANDS,
-        version=__version__,
+        version=linkify.__version__,
         config=utila.ParserConfiguration(
             outputparameter=True,
             inputparameter=True,
