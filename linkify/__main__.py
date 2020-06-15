@@ -7,7 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 #==============================================================================
 
-from linkify.cli import main
+import linkify.cli
 
 if __name__ == "__main__":
-    main()
+    linkify.cli.main()
