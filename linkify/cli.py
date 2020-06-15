@@ -31,7 +31,6 @@ def main():
             description='',
             multiprocessed=True,
             name=linkify.PROCESS,
-            pages=True,
             version=linkify.__version__,
         ),
     )
