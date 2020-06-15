@@ -9,8 +9,10 @@
 
 import os
 
-__version__ = '0.1.0'
+import www
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+
+__version__ = www.__version__
 
 PROCESS = 'linkify'

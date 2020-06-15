@@ -22,7 +22,7 @@ UTF8 = 'utf8'
 with open(join(ROOT, 'README.md'), mode='rt', encoding=UTF8) as fp:
     README = fp.read()
 
-with open(join(ROOT, 'linkify/__init__.py'), mode='rt', encoding=UTF8) as fp:
+with open(join(ROOT, 'www/__init__.py'), mode='rt', encoding=UTF8) as fp:
     VERSION = search(r'__version__ = \'(.*?)\'', fp.read()).group(1)
 
 with open(join(ROOT, "requirements.txt"), mode='rt', encoding=UTF8) as fp:
@@ -51,6 +51,7 @@ if __name__ == "__main__":
         ],
         packages=[
             'linkify',
+            'www',
         ],
         entry_points={
             'console_scripts': ['linkify = linkify.cli:main'],
