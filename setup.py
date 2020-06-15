@@ -51,6 +51,7 @@ if __name__ == "__main__":
         ],
         packages=[
             'linkify',
+            'linkify.feature',
             'www',
         ],
         entry_points={
