@@ -1,0 +1,45 @@
+# =============================================================================
+# C O P Y R I G H T
+# -----------------------------------------------------------------------------
+# Copyright (c) 2020 by Helmut Konrad Fahrendholz. All rights reserved.
+# This file is property of Helmut Konrad Fahrendholz. Any unauthorized copy,
+# use or distribution is an offensive act against international law and may
+# be prosecuted under federal law. Its content is company confidential.
+# =============================================================================
+
+import http
+
+import urllib3
+import utila
+
+
+def verify(url, allgreen: bool = False) -> bool:
+    """Check connection for given `url`.
+
+    Args:
+        url(str): url to check
+        allgreen(bool): if True, all valid urls are treated as connectable
+    Returns:
+        True if connection is possible
+        False if server is not reachable
+        None if given `url` is not valid
+
+    Not a valid url:
+
+    >>> verify('not@@?@vlaid', False) is None
+    True
+    """
+    if allgreen:
+        return True
+    try:
+        # validate url
+        connection = urllib3.connection_from_url(url, timeout=5)
+    except ValueError:
+        # not a valid url
+        return None
+    try:
+        requested = connection.request('GET', '/')
+    except Exception as error:  # pylint:disable=broad-except
+        utila.error(error)
+        return False
+    return requested.status == http.HTTPStatus.OK
