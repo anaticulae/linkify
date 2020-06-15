@@ -7,23 +7,20 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
-
 import linkify.link
+import linkify.serialize
 
 
 def work(links: str, offline: bool = False) -> str:
     parsed = parse_links(links, offline=offline)
-    raw = utila.NEWLINE.join(parsed)
-    return raw
+    dumped = linkify.serialize.dump_links(parsed)
+    return dumped
 
 
 def parse_links(path, offline: bool = False):
-    loaded = utila.from_raw_or_path(path)
-    splitted = [item for item in loaded.splitlines() if item]
-
+    loaded = linkify.serialize.load_links(path)
     result = []
-    for item in splitted:
-        verified = linkify.link.verify(item, allgreen=offline)
-        result.append(f'{verified} {item}')
+    for link in loaded:
+        verified = linkify.link.verify(link, allgreen=offline)
+        result.append((link, verified))
     return result

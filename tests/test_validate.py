@@ -21,7 +21,8 @@ EXPECTED = """\
 True http://www.google.de
 True A&&&2ASD
 None not@@?@vlaid
-True www.helm.de"""
+True www.helm.de
+"""
 
 
 def test_validate_links(monkeypatch):
