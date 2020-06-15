@@ -10,7 +10,7 @@ RP 0.1.0
 
 * [ ] blacklist, do not access these links
 
-* [ ] option --allgreen for testing purpose, all links pass the test
+* [x] option --allgreen for testing purpose, all links pass the test
 
 
 code quality

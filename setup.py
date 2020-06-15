@@ -51,7 +51,6 @@ if __name__ == "__main__":
         ],
         packages=[
             'linkify',
-            'linkify.cli',
         ],
         entry_points={
             'console_scripts': ['linkify = linkify.cli:main'],

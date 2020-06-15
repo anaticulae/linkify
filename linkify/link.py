@@ -29,8 +29,6 @@ def verify(url, allgreen: bool = False) -> bool:
     >>> verify('not@@?@vlaid', False) is None
     True
     """
-    if allgreen:
-        return True
     # disable urllib logging
     urllib3.logging.disable()
     try:
@@ -39,6 +37,8 @@ def verify(url, allgreen: bool = False) -> bool:
     except ValueError:
         # not a valid url
         return None
+    if allgreen:
+        return True
     try:
         requested = connection.request('GET', '/')
     except Exception as error:  # pylint:disable=broad-except

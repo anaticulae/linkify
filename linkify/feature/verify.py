@@ -12,18 +12,18 @@ import utila
 import linkify.link
 
 
-def work(links: str) -> str:
-    parsed = parse_links(links)
+def work(links: str, offline: bool = False) -> str:
+    parsed = parse_links(links, offline=offline)
     raw = utila.NEWLINE.join(parsed)
     return raw
 
 
-def parse_links(path):
+def parse_links(path, offline: bool = False):
     loaded = utila.from_raw_or_path(path)
     splitted = [item for item in loaded.splitlines() if item]
 
     result = []
     for item in splitted:
-        verified = linkify.link.verify(item)
+        verified = linkify.link.verify(item, allgreen=offline)
         result.append(f'{verified} {item}')
     return result

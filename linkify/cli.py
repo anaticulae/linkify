@@ -16,6 +16,7 @@ WORKPLAN = [
         'verify',
         inputs=[
             utila.ResultFile(producer='detector', name='bibliography_links'),
+            utila.Bool('offline')
         ],
         output=('verified',),
     )
