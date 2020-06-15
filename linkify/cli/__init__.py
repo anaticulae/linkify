@@ -14,6 +14,7 @@ import linkify
 
 COMMANDS = []  # add additional commands here
 
+
 @utila.saveme
 def main():
     parser = utila.cli.create_parser(

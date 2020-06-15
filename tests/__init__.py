@@ -6,3 +6,23 @@
 # use or distribution is an offensive act against international law and may
 # be prosecuted under federal law. Its content is company confidential.
 #==============================================================================
+
+import functools
+
+import utila
+
+import linkify.cli
+
+# pylint:disable=C0103
+run = functools.partial(
+    utila.run_command,
+    main=linkify.cli.main,
+    process=linkify.PROCESS,
+    success=True,
+)
+fail = functools.partial(
+    utila.run_command,
+    main=linkify.cli.main,
+    process=linkify.PROCESS,
+    success=False,
+)
