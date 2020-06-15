@@ -8,8 +8,6 @@ RP 0.1.0
 
 * [x] add `linkify` to verify access to list of links
 
-* [ ] blacklist, do not access these links
-
 * [x] option --allgreen for testing purpose, all links pass the test
 
 
