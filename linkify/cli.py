@@ -8,23 +8,30 @@
 #==============================================================================
 
 import utila
-import utila.cli
 
 import linkify
 
-COMMANDS = []  # add additional commands here
+WORKPLAN = [
+    utila.create_step(
+        'verify',
+        inputs=[
+            utila.ResultFile(producer='detector', name='bibliography_links'),
+        ],
+        output=('verified',),
+    )
+]
 
 
-@utila.saveme
 def main():
-    parser = utila.cli.create_parser(
-        COMMANDS,
-        version=linkify.__version__,
-        config=utila.ParserConfiguration(
-            outputparameter=True,
-            inputparameter=True,
+    utila.featurepack(
+        workplan=WORKPLAN,
+        root=linkify.ROOT,
+        featurepackage='linkify.feature',
+        config=utila.FeaturePackConfig(
+            description='',
+            multiprocessed=True,
+            name=linkify.PROCESS,
+            pages=True,
+            version=linkify.__version__,
         ),
     )
-    args = utila.parse(parser)
-    inputpath, output, _ = utila.sources(args)  # pylint:disable=W0612
-    return utila.SUCCESS
