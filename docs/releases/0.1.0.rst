@@ -6,7 +6,7 @@ link status.
 RP 0.1.0
 =========
 
-* [ ] add `linkify` to verify access to list of links
+* [x] add `linkify` to verify access to list of links
 
 * [ ] blacklist, do not access these links
 

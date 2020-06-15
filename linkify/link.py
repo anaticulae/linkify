@@ -31,6 +31,8 @@ def verify(url, allgreen: bool = False) -> bool:
     """
     if allgreen:
         return True
+    # disable urllib logging
+    urllib3.logging.disable()
     try:
         # validate url
         connection = urllib3.connection_from_url(url, timeout=5)
