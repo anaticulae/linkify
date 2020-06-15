@@ -19,10 +19,11 @@ def main():
     parser = utila.cli.create_parser(
         COMMANDS,
         version=__version__,
-        outputparameter=True,
-        inputparameter=True,
+        config=utila.ParserConfiguration(
+            outputparameter=True,
+            inputparameter=True,
+        ),
     )
     args = utila.parse(parser)
     inputpath, output, _ = utila.sources(args)  # pylint:disable=W0612
-
     return utila.SUCCESS
