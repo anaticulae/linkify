@@ -22,7 +22,7 @@ UTF8 = 'utf8'
 with open(join(ROOT, 'README.md'), mode='rt', encoding=UTF8) as fp:
     README = fp.read()
 
-with open(join(ROOT, 'www/__init__.py'), mode='rt', encoding=UTF8) as fp:
+with open(join(ROOT, 'linkify/__init__.py'), mode='rt', encoding=UTF8) as fp:
     VERSION = search(r'__version__ = \'(.*?)\'', fp.read()).group(1)
 
 with open(join(ROOT, "requirements.txt"), mode='rt', encoding=UTF8) as fp:
@@ -39,7 +39,7 @@ if __name__ == "__main__":
         description='access outside',
         install_requires=INSTALL_REQUIRES,
         long_description=README,
-        name='www',
+        name='linkify',
         platforms='any',
         url='https://dev.package.checkitweg.de/www',
         version=VERSION,
@@ -52,7 +52,6 @@ if __name__ == "__main__":
         packages=[
             'linkify',
             'linkify.feature',
-            'www',
         ],
         entry_points={
             'console_scripts': ['linkify = linkify.cli:main'],
