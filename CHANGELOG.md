@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.2.0
+
+### Feature
+
+* change input file name (335e7f9a2af6)
+
 ## v0.1.2
 
 ## v0.1.1
