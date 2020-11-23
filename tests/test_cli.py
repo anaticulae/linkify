@@ -20,7 +20,7 @@ def test_cli(monkeypatch):
 
 def test_offline_flag(testdir, monkeypatch):
     utila.file_create(
-        'detector__bibliography_links.yaml',
+        'links__todo.yaml',
         tests.test_validate.LINK_LIST,
     )
     tests.run('--offline', monkeypatch=monkeypatch)

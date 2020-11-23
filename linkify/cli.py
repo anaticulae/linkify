@@ -15,7 +15,7 @@ WORKPLAN = [
     utila.create_step(
         'verify',
         inputs=[
-            utila.ResultFile(producer='detector', name='bibliography_links'),
+            utila.ResultFile(producer='links', name='todo'),
             utila.Bool('offline')
         ],
         output=('verified',),
