@@ -41,7 +41,7 @@ if __name__ == "__main__":
         long_description=README,
         name='linkify',
         platforms='any',
-        url='https://dev.package.checkitweg.de/www',
+        url='https://dev.package.checkitweg.de/linkify',
         version=VERSION,
         zip_safe=False,  # create 'zip'-file if True. Don't do it!
         classifiers=[
