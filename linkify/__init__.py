@@ -11,6 +11,6 @@ import os
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
-__version__ = '0.2.3'
+__version__ = '0.3.0'
 
 PROCESS = 'linkify'
