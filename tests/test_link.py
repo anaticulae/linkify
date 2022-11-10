@@ -22,7 +22,7 @@ def test_verify_link(url, green, expected):
     assert result == expected
 
 
-def test_verify_mocked(monkeypatch):
-    with tests.patch_urllib(monkeypatch):
+def test_verify_mocked(mp):
+    with tests.patch_urllib(mp):
         result = linkify.link.verify(url='http://www.amazon.com')
     assert result

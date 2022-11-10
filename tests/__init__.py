@@ -19,8 +19,8 @@ run, fail = utilatest.create_cli_runner(linkify)
 
 
 @contextlib.contextmanager
-def patch_urllib(monkeypatch):
-    with monkeypatch.context() as context:
+def patch_urllib(mp):
+    with mp.context() as context:
         context.setattr(
             urllib3.request.RequestMethods,
             'request',

@@ -25,7 +25,7 @@ True www.helm.de
 """
 
 
-def test_validate_links(monkeypatch):
-    with tests.patch_urllib(monkeypatch):
+def test_validate_links(mp):
+    with tests.patch_urllib(mp):
         dumped = linkify.feature.verify.work(LINK_LIST)
     assert dumped == EXPECTED

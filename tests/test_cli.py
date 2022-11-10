@@ -14,16 +14,16 @@ import tests
 import tests.test_validate
 
 
-def test_cli(monkeypatch):
-    tests.run('--help', monkeypatch=monkeypatch)
+def test_cli(mp):
+    tests.run('--help', mp=mp)
 
 
-def test_offline_flag(testdir, monkeypatch):
+def test_offline_flag(td, mp):
     utila.file_create(
         'links__todo.yaml',
         tests.test_validate.LINK_LIST,
     )
-    tests.run('--offline', monkeypatch=monkeypatch)
+    tests.run('--offline', mp=mp)
 
-    loaded = utila.file_read(linkify.path.verified(testdir.tmpdir))
+    loaded = utila.file_read(linkify.path.verified(td.tmpdir))
     assert loaded == tests.test_validate.EXPECTED
