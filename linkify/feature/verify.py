@@ -7,10 +7,14 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import configo
 import utila
 
 import linkify.link
 import linkify.serialize
+
+# Limit request to secure server to overload
+HTTP_REQUEST_PARALLEL_MAX = configo.HV_INT_PLUS(default=16)
 
 
 def work(links: str, offline: bool = False) -> str:
@@ -21,7 +25,11 @@ def work(links: str, offline: bool = False) -> str:
 
 def parse_links(path, offline: bool = False):
     loaded = linkify.serialize.load_links(path)
-    with utila.GeorgFork(process=False, returncode=False) as fork:
+    with utila.GeorgFork(
+            process=False,
+            returncode=False,
+            worker=HTTP_REQUEST_PARALLEL_MAX,
+    ) as fork:
         for link in loaded:
             fork.fork(
                 method=linkify.link.verify,
