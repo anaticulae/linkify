@@ -9,8 +9,11 @@
 
 import http
 
+import configo
 import urllib3
 import utila
+
+HTTP_TIMEOUT = configo.HV_SECOND(default=5)
 
 
 def verify(url, allgreen: bool = False) -> bool:
@@ -33,7 +36,10 @@ def verify(url, allgreen: bool = False) -> bool:
     urllib3.logging.disable()
     try:
         # validate url
-        connection = urllib3.connection_from_url(url, timeout=5)
+        connection = urllib3.connection_from_url(
+            url,
+            timeout=HTTP_TIMEOUT,
+        )
     except ValueError:
         # not a valid url
         return None
