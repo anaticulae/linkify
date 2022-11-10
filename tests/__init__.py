@@ -8,28 +8,14 @@
 #==============================================================================
 
 import contextlib
-import functools
 import http
 
 import urllib3
-import utila
 import utilatest
 
-import linkify.cli
+import linkify
 
-# pylint:disable=C0103
-run = functools.partial(
-    utilatest.run_command,
-    main=linkify.cli.main,
-    process=linkify.PROCESS,
-    success=True,
-)
-fail = functools.partial(
-    utilatest.run_command,
-    main=linkify.cli.main,
-    process=linkify.PROCESS,
-    success=False,
-)
+run, fail = utilatest.create_cli_runner(linkify)
 
 
 @contextlib.contextmanager
