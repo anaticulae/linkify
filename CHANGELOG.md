@@ -2,6 +2,23 @@
 
 Every noteable change is logged here.
 
+## v0.4.0 (2022-11-10)
+
+### Feature
+
+* limit http calls in parallel (34d98adb095e)
+* run verification in parallel (6b1d3d164477)
+* use holy value to define http timeout (df5f79d5741c)
+
+### Chore
+
+* add configo (3dacfd98e2e6)
+* remove default config (e400e38d5a01)
+* convert nightly to all (e6e6e56a516a)
+* upgrade environment (3bc2d14dde2f)
+* upgrade requirements.txt (04998471d1dd)
+* do not run in privileged mode (0182c2927fc8)
+
 ## v0.3.0 (2022-10-02)
 
 ### Chore
