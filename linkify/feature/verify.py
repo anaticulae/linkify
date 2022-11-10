@@ -7,6 +7,8 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import utila
+
 import linkify.link
 import linkify.serialize
 
@@ -19,8 +21,15 @@ def work(links: str, offline: bool = False) -> str:
 
 def parse_links(path, offline: bool = False):
     loaded = linkify.serialize.load_links(path)
-    result = []
-    for link in loaded:
-        verified = linkify.link.verify(link, allgreen=offline)
-        result.append((link, verified))
+    with utila.GeorgFork(process=False, returncode=False) as fork:
+        for link in loaded:
+            fork.fork(
+                method=linkify.link.verify,
+                url=link,
+                allgreen=offline,
+            )
+    result = list(zip(
+        loaded,
+        fork.result,
+    ))
     return result
