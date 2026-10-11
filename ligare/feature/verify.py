@@ -7,14 +7,14 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import configo
-import utila
+import configos
+import utilo
 
 import ligare.link
 import ligare.serialize
 
 # Limit request to secure server to overload
-HTTP_REQUEST_PARALLEL_MAX = configo.HV_INT_PLUS(default=16)
+HTTP_REQUEST_PARALLEL_MAX = configos.HV_INT_PLUS(default=16)
 
 
 def work(links: str, offline: bool = False) -> str:
@@ -25,7 +25,7 @@ def work(links: str, offline: bool = False) -> str:
 
 def parse_links(path, offline: bool = False):
     loaded = ligare.serialize.load_links(path)
-    with utila.GeorgFork(
+    with utilo.GeorgFork(
             process=False,
             returncode=False,
             worker=HTTP_REQUEST_PARALLEL_MAX,

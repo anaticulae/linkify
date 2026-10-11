@@ -7,16 +7,16 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
+import utilo
 
 
 def load_links(path: str) -> list:
-    loaded = utila.from_raw_or_path(path)
+    loaded = utilo.from_raw_or_path(path)
     splitted = [item for item in loaded.splitlines() if item]
     return splitted
 
 
 def dump_links(links) -> str:
     result = [f'{status} {link}' for link, status in links]
-    raw = utila.NEWLINE.join(result) + utila.NEWLINE
+    raw = utilo.NEWLINE.join(result) + utilo.NEWLINE
     return raw

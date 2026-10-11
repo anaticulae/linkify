@@ -7,16 +7,16 @@
 # be prosecuted under federal law. Its content is company confidential.
 #==============================================================================
 
-import utila
+import utilo
 
 import ligare
 
 WORKPLAN = [
-    utila.create_step(
+    utilo.create_step(
         'verify',
         inputs=[
-            utila.ResultFile(producer='links', name='todo'),
-            utila.Bool('offline')
+            utilo.ResultFile(producer='links', name='todo'),
+            utilo.Bool('offline')
         ],
         output=('verified',),
     )
@@ -24,11 +24,11 @@ WORKPLAN = [
 
 
 def main():
-    utila.featurepack(
+    utilo.featurepack(
         workplan=WORKPLAN,
         root=ligare.ROOT,
-        featurepackage='linkify.feature',
-        config=utila.FeaturePackConfig(
+        featurepackage='ligare.feature',
+        config=utilo.FeaturePackConfig(
             description='',
             multiprocessed=True,
             name=ligare.PROCESS,

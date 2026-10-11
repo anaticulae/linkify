@@ -12,7 +12,7 @@ Every noteable change is logged here.
 
 ### Chore
 
-* add configo (3dacfd98e2e6)
+* add configos (3dacfd98e2e6)
 * remove default config (e400e38d5a01)
 * convert nightly to all (e6e6e56a516a)
 * upgrade environment (3bc2d14dde2f)
@@ -64,4 +64,3 @@ Every noteable change is logged here.
 * fix broken cli config (1d8ecf9a0ad9)
 
 ## v0.0.0 Initial release
-

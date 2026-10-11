@@ -9,11 +9,11 @@
 
 import http
 
-import configo
+import configos
 import urllib3
-import utila
+import utilo
 
-HTTP_TIMEOUT = configo.HV_SECOND(default=5)
+HTTP_TIMEOUT = configos.HV_SECOND(default=5)
 
 
 def verify(url, allgreen: bool = False) -> bool:
@@ -48,6 +48,6 @@ def verify(url, allgreen: bool = False) -> bool:
     try:
         requested = connection.request('GET', '/')
     except Exception as error:  # pylint:disable=broad-except
-        utila.error(error)
+        utilo.error(error)
         return False
     return requested.status == http.HTTPStatus.OK

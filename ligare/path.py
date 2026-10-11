@@ -7,13 +7,13 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
+import utilo
 
 import ligare
 
 
 def verified(path: str, prefix: str = '') -> str:
-    return utila.pathconnector(
+    return utilo.pathconnector(
         path,
         ligare.PROCESS,
         'verify_verified',

@@ -7,7 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
+import utilo
 
 import ligare.path
 import tests
@@ -19,11 +19,11 @@ def test_cli(mp):
 
 
 def test_offline_flag(td, mp):
-    utila.file_create(
+    utilo.file_create(
         'links__todo.yaml',
         tests.test_validate.LINK_LIST,
     )
     tests.run('--offline', mp=mp)
 
-    loaded = utila.file_read(ligare.path.verified(td.tmpdir))
+    loaded = utilo.file_read(ligare.path.verified(td.tmpdir))
     assert loaded == tests.test_validate.EXPECTED

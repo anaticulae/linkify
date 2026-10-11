@@ -11,11 +11,11 @@ import contextlib
 import http
 
 import urllib3
-import utilatest
+import utilotest
 
 import ligare
 
-run, fail = utilatest.create_cli_runner(ligare)
+run, fail = utilotest.create_cli_runner(ligare)
 
 
 @contextlib.contextmanager
