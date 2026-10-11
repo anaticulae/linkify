@@ -20,10 +20,16 @@ run, fail = utilotest.create_cli_runner(ligare)
 
 @contextlib.contextmanager
 def patch_urllib(mp):
-    with mp.context() as context:
-        context.setattr(
-            urllib3.request.RequestMethods,
-            'request',
-            lambda _, __, ___: urllib3.HTTPResponse(status=http.HTTPStatus.OK),
+
+    def mock_request(self, method, url, **kwargs):  # pylint: disable=unused-argument
+        return urllib3.HTTPResponse(
+            status=http.HTTPStatus.OK,
+            body=b"OK",
         )
-        yield
+
+    mp.setattr(
+        urllib3.HTTPConnectionPool,
+        "request",
+        mock_request,
+    )
+    yield
