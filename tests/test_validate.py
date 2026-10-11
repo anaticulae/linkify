@@ -7,7 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import linkify.feature.verify
+import ligare.feature.verify
 import tests
 
 LINK_LIST = """\
@@ -27,5 +27,5 @@ True www.helm.de
 
 def test_validate_links(mp):
     with tests.patch_urllib(mp):
-        dumped = linkify.feature.verify.work(LINK_LIST)
+        dumped = ligare.feature.verify.work(LINK_LIST)
     assert dumped == EXPECTED

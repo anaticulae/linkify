@@ -9,7 +9,7 @@
 
 import pytest
 
-import linkify.link
+import ligare.link
 import tests
 
 
@@ -18,11 +18,11 @@ import tests
     ('http://www.checkitweg.de', True, True),
 ])
 def test_verify_link(url, green, expected):
-    result = linkify.link.verify(url=url, allgreen=green)
+    result = ligare.link.verify(url=url, allgreen=green)
     assert result == expected
 
 
 def test_verify_mocked(mp):
     with tests.patch_urllib(mp):
-        result = linkify.link.verify(url='http://www.amazon.com')
+        result = ligare.link.verify(url='http://www.amazon.com')
     assert result

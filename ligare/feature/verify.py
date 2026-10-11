@@ -10,8 +10,8 @@
 import configo
 import utila
 
-import linkify.link
-import linkify.serialize
+import ligare.link
+import ligare.serialize
 
 # Limit request to secure server to overload
 HTTP_REQUEST_PARALLEL_MAX = configo.HV_INT_PLUS(default=16)
@@ -19,12 +19,12 @@ HTTP_REQUEST_PARALLEL_MAX = configo.HV_INT_PLUS(default=16)
 
 def work(links: str, offline: bool = False) -> str:
     parsed = parse_links(links, offline=offline)
-    dumped = linkify.serialize.dump_links(parsed)
+    dumped = ligare.serialize.dump_links(parsed)
     return dumped
 
 
 def parse_links(path, offline: bool = False):
-    loaded = linkify.serialize.load_links(path)
+    loaded = ligare.serialize.load_links(path)
     with utila.GeorgFork(
             process=False,
             returncode=False,
@@ -32,7 +32,7 @@ def parse_links(path, offline: bool = False):
     ) as fork:
         for link in loaded:
             fork.fork(
-                method=linkify.link.verify,
+                method=ligare.link.verify,
                 url=link,
                 allgreen=offline,
             )

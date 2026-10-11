@@ -13,9 +13,9 @@ import http
 import urllib3
 import utilatest
 
-import linkify
+import ligare
 
-run, fail = utilatest.create_cli_runner(linkify)
+run, fail = utilatest.create_cli_runner(ligare)
 
 
 @contextlib.contextmanager

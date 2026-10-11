@@ -9,7 +9,7 @@
 
 import utila
 
-import linkify
+import ligare
 
 WORKPLAN = [
     utila.create_step(
@@ -26,12 +26,12 @@ WORKPLAN = [
 def main():
     utila.featurepack(
         workplan=WORKPLAN,
-        root=linkify.ROOT,
+        root=ligare.ROOT,
         featurepackage='linkify.feature',
         config=utila.FeaturePackConfig(
             description='',
             multiprocessed=True,
-            name=linkify.PROCESS,
-            version=linkify.__version__,
+            name=ligare.PROCESS,
+            version=ligare.__version__,
         ),
     )

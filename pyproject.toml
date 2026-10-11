@@ -6,7 +6,7 @@ requires = [
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "linkify"
+name = "ligare"
 version = "0.4.0"
 description = ""
 requires-python = ">=3.12"
@@ -42,7 +42,7 @@ Homepage = "https://github.com/anaticulae/linkify"
 Repository = "https://github.com/anaticulae/linkify"
 
 [project.scripts]
-linkify = "linkify.cli:main"
+linkify = "ligare.cli:main"
 
 [tool.semantic_release]
 version_toml = [
@@ -78,8 +78,8 @@ where = [
     ".",
 ]
 include = [
-    "linkify",
-    "linkify.feature",
+    "ligare",
+    "ligare.feature",
 ]
 exclude = [
     "tests*",

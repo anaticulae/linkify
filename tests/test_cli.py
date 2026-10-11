@@ -9,7 +9,7 @@
 
 import utila
 
-import linkify.path
+import ligare.path
 import tests
 import tests.test_validate
 
@@ -25,5 +25,5 @@ def test_offline_flag(td, mp):
     )
     tests.run('--offline', mp=mp)
 
-    loaded = utila.file_read(linkify.path.verified(td.tmpdir))
+    loaded = utila.file_read(ligare.path.verified(td.tmpdir))
     assert loaded == tests.test_validate.EXPECTED

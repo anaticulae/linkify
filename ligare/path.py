@@ -9,13 +9,13 @@
 
 import utila
 
-import linkify
+import ligare
 
 
 def verified(path: str, prefix: str = '') -> str:
     return utila.pathconnector(
         path,
-        linkify.PROCESS,
+        ligare.PROCESS,
         'verify_verified',
         prefix,
     )
