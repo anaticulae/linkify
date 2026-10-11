@@ -1,66 +1,223 @@
-# Changelog
+# CHANGELOG
 
-Every noteable change is logged here.
+
+## v1.0.0 (2026-10-11)
+
+### Chores
+
+- **github**: Add .github
+  ([`053d976`](https://github.com/anaticulae/linkify/commit/053d976072e2f8c20aaaacade8100357185cf2dc))
+
+- **project**: Adjust package name
+  ([`fb4a151`](https://github.com/anaticulae/linkify/commit/fb4a1513f2e5659b3f69c0b5fe218c0f7e6eec3f))
+
+- **pyproject**: Add modern layout
+  ([`09eb61e`](https://github.com/anaticulae/linkify/commit/09eb61e239633967a43fdc5a441c43e5b6c3ad0f))
+
+- **readme**: Adjust file types
+  ([`6eabfeb`](https://github.com/anaticulae/linkify/commit/6eabfeb8aa2c2f0ad27270bdb89611f666533a53))
+
+- **refactor**: Adjust package names
+  ([`0eec488`](https://github.com/anaticulae/linkify/commit/0eec488af191f9fc13a98eebe9029f6b68be2a07))
+
+### Testing
+
+- **fix**: Mock to new urllib
+  ([`1cc20db`](https://github.com/anaticulae/linkify/commit/1cc20db5773e602998904e3bfaf0df4bb212e453))
+
 
 ## v0.4.0 (2022-11-10)
 
-### Feature
+### Chores
 
-* limit http calls in parallel (34d98adb095e)
-* run verification in parallel (6b1d3d164477)
-* use holy value to define http timeout (df5f79d5741c)
+- **baw**: Remove default config
+  ([`e400e38`](https://github.com/anaticulae/linkify/commit/e400e38d5a01ed81b52518053ba2d80190e1a54b))
 
-### Chore
+- **Jenkins**: Convert nightly to all
+  ([`e6e6e56`](https://github.com/anaticulae/linkify/commit/e6e6e56a516ab0e65e7220a2b96bfd8bae5e478b))
 
-* add configos (3dacfd98e2e6)
-* remove default config (e400e38d5a01)
-* convert nightly to all (e6e6e56a516a)
-* upgrade environment (3bc2d14dde2f)
-* upgrade requirements.txt (04998471d1dd)
-* do not run in privileged mode (0182c2927fc8)
+- **Jenkins**: Do not run in privileged mode
+  ([`0182c29`](https://github.com/anaticulae/linkify/commit/0182c2927fc86bb177fb4e29ece26acdfa6e8629))
+
+- **Jenkins**: Upgrade environment
+  ([`3bc2d14`](https://github.com/anaticulae/linkify/commit/3bc2d14dde2f8b42f1641dd3aeecec49d9a6a608))
+
+- **requirements**: Add configo
+  ([`3dacfd9`](https://github.com/anaticulae/linkify/commit/3dacfd98e2e64c1ec2a6f2868ae9c8bbfeafce0a))
+
+- **requirements**: Upgrade requirements.txt
+  ([`0499847`](https://github.com/anaticulae/linkify/commit/04998471d1dde9b290470f6065e01961c743e1be))
+
+### Features
+
+- **link**: Use holy value to define http timeout
+  ([`df5f79d`](https://github.com/anaticulae/linkify/commit/df5f79d5741c3f13371dcb0917b76824f12baa1a))
+
+- **verify**: Limit http calls in parallel
+  ([`34d98ad`](https://github.com/anaticulae/linkify/commit/34d98adb095e9556b0aeba8a40d5ddf873beba61))
+
+- **verify**: Run verification in parallel
+  ([`6b1d3d1`](https://github.com/anaticulae/linkify/commit/6b1d3d164477c83beadf83d1beae2bba6f5ef05b))
+
+### Refactoring
+
+- **replace**: Automated replacement
+  ([`9662871`](https://github.com/anaticulae/linkify/commit/9662871fdec3f16775731440452d55c304bde58f))
+
+### Testing
+
+- **refactor**: Use modern test runner
+  ([`1c05d7d`](https://github.com/anaticulae/linkify/commit/1c05d7d978e8f041d40fd672ff8d58c5c3bfe916))
+
 
 ## v0.3.0 (2022-10-02)
 
-### Chore
+### Chores
 
-* add Jenkinsfile (3148151aae13)
-* upgrade requirements.txt (554b2c735b23)
+- **ci**: Add Jenkinsfile
+  ([`3148151`](https://github.com/anaticulae/linkify/commit/3148151aae1345e651feca953cccdd237fca3c85))
 
-## v0.2.3
+- **requirements**: Upgrade requirements.txt
+  ([`554b2c7`](https://github.com/anaticulae/linkify/commit/554b2c735b2347d6ded467aadf357e839dc4419f))
+
+### Code Style
+
+- **changelog**: Adjust to automation tool
+  ([`7e1da58`](https://github.com/anaticulae/linkify/commit/7e1da58687bab2dd62517b71869811ce8dd3516c))
+
+
+## v0.2.3 (2022-03-08)
+
+### Chores
+
+- **move**: Move project config
+  ([`db3573f`](https://github.com/anaticulae/linkify/commit/db3573f659812ed82caffbd548fe829f6433c3f6))
+
+- **requirements**: Upgrade requirements.txt
+  ([`e29fcfe`](https://github.com/anaticulae/linkify/commit/e29fcfe76d4f0645a59d8ae9d414d262499c2870))
+
+- **setup**: Cleanup setup
+  ([`e6e41ec`](https://github.com/anaticulae/linkify/commit/e6e41ec3a475603b1cb2b0fcdd6741144143e082))
 
 ### Documentation
 
-* adjust modules path (a67e60834fed)
-* Happy New Year! (247576d08394)
+- **copyright**: Happy New Year!
+  ([`247576d`](https://github.com/anaticulae/linkify/commit/247576d08394275a590a261b0c47de92e2804903))
 
-## v0.2.2
+- **fix**: Adjust modules path
+  ([`a67e608`](https://github.com/anaticulae/linkify/commit/a67e60834fed68fd9b8a052c16d4e5b99ad0ef29))
 
-## v0.2.1
 
-## v0.2.0
+## v0.2.2 (2020-12-09)
 
-### Feature
+### Chores
 
-* change input file name (335e7f9a2af6)
+- **requirements**: Do not upgrade so often
+  ([`1f3a3b2`](https://github.com/anaticulae/linkify/commit/1f3a3b27d2a40301ab8545227689b7a86add859b))
 
-## v0.1.2
+- **requirements**: Upgrade requirements.txt
+  ([`e8fc5bd`](https://github.com/anaticulae/linkify/commit/e8fc5bdb7d8af2066b20cc74f53f8a23490c90d3))
 
-## v0.1.1
 
-## v0.1.0
+## v0.2.1 (2020-12-04)
 
-### Feature
+### Chores
 
-* add method to dump and load link files (6ca59509de87)
-* add --offline flag to validate link but do not check access (f75e97fffb56)
-* add fill validation step with checker code (b2511bfdfe23)
-* add method to verify link (445c03290ed7)
-* use featurepack to structure cli (6357cf97103d)
+- **requirements**: Upgrade requirements.txt
+  ([`183c8a6`](https://github.com/anaticulae/linkify/commit/183c8a61dc8955faca7dc21e96660f8bfc57a0ad))
 
-### Fix
+- **setup**: Fix project url
+  ([`df245fe`](https://github.com/anaticulae/linkify/commit/df245fe8b21227152d9f5db7896485828d20b20f))
 
-* disable page flag (b915bdfec652)
-* remove unnecessary data files (1128e4b206a3)
-* fix broken cli config (1d8ecf9a0ad9)
 
-## v0.0.0 Initial release
+## v0.2.0 (2020-11-23)
+
+### Chores
+
+- **requirements**: Add utilatest
+  ([`ccf30a0`](https://github.com/anaticulae/linkify/commit/ccf30a0354d44b7512b74641f1e1a5247b0bcc0f))
+
+- **requirements**: Upgrade requirements.txt
+  ([`d91c5e1`](https://github.com/anaticulae/linkify/commit/d91c5e1b51f91be606c48ad6732af51e883243b4))
+
+### Features
+
+- **cli**: Change input file name
+  ([`335e7f9`](https://github.com/anaticulae/linkify/commit/335e7f9a2af69181642c2bc02cf46de0c0efb025))
+
+### Refactoring
+
+- **setup**: Remove www package
+  ([`834be11`](https://github.com/anaticulae/linkify/commit/834be11abeabb939226acbc9d70b862193936f4a))
+
+
+## v0.1.2 (2020-06-16)
+
+### Chores
+
+- **setup**: Add missing package import
+  ([`7fcd018`](https://github.com/anaticulae/linkify/commit/7fcd018b0abd364130594c9ff651b4d9d9eb23e0))
+
+
+## v0.1.1 (2020-06-16)
+
+### Chores
+
+- **setup**: Make package conform with default project style
+  ([`9aad533`](https://github.com/anaticulae/linkify/commit/9aad533181122721cc8c9f1a0bdb4cfc95e0948e))
+
+
+## v0.1.0 (2020-06-16)
+
+### Bug Fixes
+
+- **cli**: Disable page flag
+  ([`b915bdf`](https://github.com/anaticulae/linkify/commit/b915bdfec652a78a00aee64142cb063fc1b156cc))
+
+- **cli**: Fix broken cli config
+  ([`1d8ecf9`](https://github.com/anaticulae/linkify/commit/1d8ecf9a0ad9b7502693286181bc7e6f927cd67a))
+
+- **setup**: Remove unnecessary data files
+  ([`1128e4b`](https://github.com/anaticulae/linkify/commit/1128e4b206a3e32f7f5cf4755066ee55919fad3d))
+
+### Chores
+
+- **release**: Do not release with linter findings
+  ([`10c99ba`](https://github.com/anaticulae/linkify/commit/10c99baad9922dd6c2c879ff81301f02bc73974f))
+
+### Code Style
+
+- **imports**: Organize imports
+  ([`87cc028`](https://github.com/anaticulae/linkify/commit/87cc0281a5876965e950c58648a775516ae8b7f4))
+
+### Features
+
+- **cli**: Use featurepack to structure cli
+  ([`6357cf9`](https://github.com/anaticulae/linkify/commit/6357cf97103de432d00dfad4d17b7a0b13909d24))
+
+- **link**: Add method to verify link
+  ([`445c032`](https://github.com/anaticulae/linkify/commit/445c03290ed78ed5f22be696e3ed7540ba8bd5e7))
+
+- **linkify**: Add --offline flag to validate link but do not check access
+  ([`f75e97f`](https://github.com/anaticulae/linkify/commit/f75e97fffb561ef741254189f8ba2831ec4802b3))
+
+- **serialize**: Add method to dump and load link files
+  ([`6ca5950`](https://github.com/anaticulae/linkify/commit/6ca59509de87c94c4df67a8a81e1d759d18604ab))
+
+- **validate**: Add fill validation step with checker code
+  ([`b2511bf`](https://github.com/anaticulae/linkify/commit/b2511bfdfe2359efca93052d46a606027e9fad4f))
+
+### Refactoring
+
+- **test**: Move call disabling to separate context manager
+  ([`722671a`](https://github.com/anaticulae/linkify/commit/722671a90400d60e858ba14503e684b412e6ee45))
+
+### Testing
+
+- **basic**: Add basic test setup
+  ([`3138bf6`](https://github.com/anaticulae/linkify/commit/3138bf6c79b837f97b165e1235c7685565d8e610))
+
+
+## v0.0.0 (2020-06-15)
+
+- Initial Release
